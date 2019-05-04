@@ -1,5 +1,5 @@
 package config
 
 const (
-	API = ""
+	API = "https://my-json-server.typicode.com/fmusayev/golang-excel/data/"
 )
