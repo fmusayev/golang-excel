@@ -12,7 +12,7 @@ type OutputData struct {
 	Patronymic       string `json:"patronymic"`       // Ata adı
 	PlaceOfBirth     string `json:"placeOfBirth"`     // Doğulduğu yer
 	DateOfBirth      string `json:"dateOfBirth"`      // Doğum tarixi
-	MaritialStatus   string `json:"maritialStatus"`   // Ailə vəziyyəti
+	MaritalStatus    string `json:"maritalStatus"`    // Ailə vəziyyəti
 	Gender           string `json:"gender"`           // Cinsi
 	Address          string `json:"address"`          // Yaşayış yeri
 	IssuingAuthority string `json:"issuingAuthority"` // Vəsiqəni verən orqan

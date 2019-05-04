@@ -19,18 +19,47 @@ func main() {
 	apiService := api.API{}
 
 	rows := xlsx.GetRows("Input")
-	for _, row := range rows {
+	for indx, row := range rows {
+		if indx == 0 {
+			continue
+		}
+
 		inputData := types.InputData{
 			CompanyId: row[0],
 			PinCode:   row[1],
 		}
-		fmt.Println(inputData)
 
 		result, err := apiService.SendRequest(inputData.PinCode)
 		if err != nil {
-			log.Panic(err)
+			fmt.Println(inputData.PinCode, ". Error: ", err)
+			continue
 		}
-		fmt.Println(result)
+
+		fmt.Println(inputData.PinCode, ". Writing result to excel: ", result)
+		mapOutputToCell(result, indx+1, xlsx)
 	}
 
+	xlsx.Save()
+}
+
+func mapOutputToCell(data types.OutputData, indx int, xlsx *excelize.File) {
+
+	m := map[string]string{}
+	m["C"] = data.PersonalNo
+	m["D"] = data.GivenName
+	m["E"] = data.Surname
+	m["F"] = data.Patronymic
+	m["G"] = data.PlaceOfBirth
+	m["H"] = data.DateOfBirth
+	m["I"] = data.MaritalStatus
+	m["J"] = data.Gender
+	m["K"] = data.Address
+	m["L"] = data.IssuingAuthority
+	m["M"] = data.DateOfIssue
+	m["N"] = data.DateOfExpiry
+
+	for k, v := range m {
+		cellIndex := fmt.Sprintf("%s%d", k, indx)
+		xlsx.SetCellValue("Input", cellIndex, v)
+	}
 }
