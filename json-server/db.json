@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "id": "RANDOM05",
+            "personalNo": "12345",
+            "givenName": "Fuad",
+            "surname": "Musayev",
+            "patronymic": "******",
+            "placeOfBirth": "Azerbaijan, Baku",
+            "dateOfBirth": "**.**.****",
+            "maritialStatus": "Single",
+            "gender": "M",
+            "address": "NA street",
+            "issuingAuthority": "Governance",
+            "dateOfIssue": "01.01.2001",
+            "dateOfExpiry": "01.01.2025"
+        }
+    ]
+}
