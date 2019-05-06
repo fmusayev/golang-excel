@@ -12,3 +12,4 @@
 *.out
 config/config_prod.go
 go.sum
+.DS_Store

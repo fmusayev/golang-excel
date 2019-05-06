@@ -45,18 +45,18 @@ func main() {
 func mapOutputToCell(data types.OutputData, indx int, xlsx *excelize.File) {
 
 	m := map[string]string{}
-	m["C"] = data.PersonalNo
-	m["D"] = data.GivenName
+	m["C"] = data.DocumentNumber
+	m["D"] = data.Name
 	m["E"] = data.Surname
 	m["F"] = data.Patronymic
-	m["G"] = data.PlaceOfBirth
-	m["H"] = data.DateOfBirth
+	m["G"] = data.BirthCountryName + ", " + data.BirthCity
+	m["H"] = data.BirthDate
 	m["I"] = data.MaritalStatus
 	m["J"] = data.Gender
-	m["K"] = data.Address
-	m["L"] = data.IssuingAuthority
-	m["M"] = data.DateOfIssue
-	m["N"] = data.DateOfExpiry
+	m["K"] = data.RegistrationAddress
+	m["L"] = data.DocGivenOrganization
+	m["M"] = data.DocGivenDate
+	m["N"] = data.ExpireDate
 
 	for k, v := range m {
 		cellIndex := fmt.Sprintf("%s%d", k, indx)

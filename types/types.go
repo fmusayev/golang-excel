@@ -6,16 +6,17 @@ type InputData struct {
 }
 
 type OutputData struct {
-	PersonalNo       string `json:"personalNo"`       // Şəxsiyyət vəsiqəsi seriya no
-	GivenName        string `json:"givenName"`        // Ad
-	Surname          string `json:"surname"`          // Soyad
-	Patronymic       string `json:"patronymic"`       // Ata adı
-	PlaceOfBirth     string `json:"placeOfBirth"`     // Doğulduğu yer
-	DateOfBirth      string `json:"dateOfBirth"`      // Doğum tarixi
-	MaritalStatus    string `json:"maritalStatus"`    // Ailə vəziyyəti
-	Gender           string `json:"gender"`           // Cinsi
-	Address          string `json:"address"`          // Yaşayış yeri
-	IssuingAuthority string `json:"issuingAuthority"` // Vəsiqəni verən orqan
-	DateOfIssue      string `json:"dateOfIssue"`      // Vəsiqənin verilmə tarixi
-	DateOfExpiry     string `json:"dateOfExpiry"`     // Vəsiqənin etibarlı olduğu tarix
+	DocumentNumber       string `json:"documentNumber"`       // Şəxsiyyət vəsiqəsi seriya no
+	Name                 string `json:"name"`                 // Ad
+	Surname              string `json:"surname"`              // Soyad
+	Patronymic           string `json:"patronymic"`           // Ata adı
+	BirthDate            string `json:"birthDate"`            // Doğum tarixi
+	BirthCountryName     string `json:"birthCountryName"`     // Doğulduğu olke
+	BirthCity            string `json:"birthCity"`            // Doğulduğu sheher
+	MaritalStatus        string `json:"maritalStatus"`        // Ailə vəziyyəti
+	Gender               string `json:"gender"`               // Cinsi
+	RegistrationAddress  string `json:"registrationAddress"`  // Yaşayış yeri
+	DocGivenOrganization string `json:"docGivenOrganization"` // Vəsiqəni verən orqan
+	DocGivenDate         string `json:"docGivenDate"`         // Vəsiqənin verilmə tarixi
+	ExpireDate           string `json:"expireDate"`           // Vəsiqənin etibarlı olduğu tarix
 }
