@@ -2,18 +2,20 @@
     "data": [
         {
             "id": "RANDOM05",
-            "personalNo": "12345",
-            "givenName": "Fuad",
+            "documentNumber": "12345",
+            "name": "Fuad",
             "surname": "Musayev",
             "patronymic": "******",
-            "placeOfBirth": "Azerbaijan, Baku",
-            "dateOfBirth": "**.**.****",
-            "maritialStatus": "Single",
+            "birthCountryName": "Azerbaijan, Baku",
+            "birthDate": "**.**.****",
+            "birthCity": "Baku",
+            "maritalStatus": "Single",
             "gender": "M",
-            "address": "NA street",
-            "issuingAuthority": "Governance",
-            "dateOfIssue": "01.01.2001",
-            "dateOfExpiry": "01.01.2025"
+            "registrationAddress": "NA street",
+            "docGivenOrganization": "Governance",
+            "docGivenDate": "01.01.2001",
+            "expireDate": "01.01.2025",
+            "notes": ""
         }
     ]
 }
