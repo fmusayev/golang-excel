@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/fmusayev/golang-excel.svg?style=svg)](https://circleci.com/gh/fmusayev/golang-excel)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fmusayev_golang-excel&metric=alert_status)](https://sonarcloud.io/dashboard?id=fmusayev_golang-excel)
 
 # Generate excel file for input data using custom tags and reflection
 
