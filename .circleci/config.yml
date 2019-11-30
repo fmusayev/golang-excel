@@ -1,0 +1,51 @@
+version: 2.1
+
+executors:
+  golang:
+    docker:
+      - image: circleci/golang
+
+orbs:
+  snyk: snyk/snyk@0.0.8
+
+commands:
+  build:
+    steps:
+      - run:
+          name: Build
+          command: GOOS=linux GOARCH=amd64 go build
+      - run:
+          name: Lint
+          command: |
+            go get -u golang.org/x/lint/golint
+            golint ./...
+      - run:
+          name: "Vet: report likely mistakes in packages"
+          command: go vet ./...
+      - run:
+          name: Unit Test
+          command: go test ./... -v -coverprofile cover.out
+      - run:
+          name: Coverage validation
+          command: |
+            COVER="$(go tool cover -func cover.out | grep total | awk '{print substr($3, 1, length($3)-1)}')"
+            COVERAGE=${COVER%\.*}
+            REQUIRED_COVERAGE="25" #percent
+            echo "COVERAGE = "$COVERAGE, "REQUIRED = "$REQUIRED_COVERAGE
+            if [[ $COVERAGE -lt $REQUIRED_COVERAGE ]]; then
+              echo "Coverage percentage too small. Please add more tests";
+              exit 1;
+            fi
+      - snyk/scan:
+          organization: fmusayev
+ 
+jobs:
+  validate:
+    executor: golang
+    steps:
+      - checkout
+      - build
+workflows:
+  ghctl_workflow:
+    jobs:
+      - validate
