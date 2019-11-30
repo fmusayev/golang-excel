@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/fmusayev/golang-excel.svg?style=svg)](https://circleci.com/gh/fmusayev/golang-excel)
+
 # Generate excel file for input data using custom tags and reflection
 
 Name: *golang-excel* \
